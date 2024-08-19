@@ -1,0 +1,164 @@
+{
+    "games": [
+        {
+            "game": [
+                {
+                    "study": [
+                        "custom",
+                        "the culprit is male",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ｢v ⟄⅃⦝□"
+                    ],
+                    "hall": [
+                        "custom",
+                        "the culprit has a moustache",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ⊓⅃v ⅃ ⟄⟃<v>⅃⌞⊓□"
+                    ],
+                    "lounge": [
+                        "vigenere",
+                        "the weapon is not too heavy"
+                    ],
+                    "library": [
+                        "vigenere",
+                        "the room was quite well lit"
+                    ],
+                    "billiardroom": [
+                        "vigenere",
+                        "the weapon has multiple uses"
+                    ],
+                    "diningroom": [
+                        "caesar",
+                        "the weapon is not sharp"
+                    ],
+                    "conservatory": [
+                        "caesar",
+                        "a tie was found at the scene of the crime"
+                    ],
+                    "ballroom": [
+                        "vigenere",
+                        "the crime scene used to be great for relaxing, but not anymore"
+                    ],
+                    "kitchen": [
+                        "caesar",
+                        "the crime scene has a passage"
+                    ]
+                },
+                {
+                    "outcome": [
+                        {
+                            "killer": "plum",
+                            "weapon": "rope",
+                            "room": "conservatory"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "game": [
+                {
+                    "study": [
+                        "custom",
+                        "the culprit is female",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ｢v ⊏□⟄⅃⦝□"
+                    ],
+                    "hall": [
+                        "custom",
+                        "an earring was found at the scene",
+                        "⅃⊡ □⅃⟔⟔｢⊡ꓶ ⟇⅃v ⊏⟃<⊡⊐ ⅃> >⊓□ v⌞□⊡□"
+                    ],
+                    "lounge": [
+                        "custom",
+                        "a glass with a lipstick stain was found",
+                        "⅃ ꓶ⦝⅃vv ⟇｢>⊓ ⅃ ⦝｢⸅v>｢⌞⊍ v>⅃｢⊡ ⟇⅃v ⊏⟃<⊡⊐"
+                    ],
+                    "library": [
+                        "vigenere",
+                        "the crime scene does not have a passage"
+                    ],
+                    "billiardroom": [
+                        "caesar",
+                        "the crime scene is not a communal space"
+                    ],
+                    "diningroom": [
+                        "vigenere",
+                        "the weapon is quite heavy"
+                    ],
+                    "conservatory": [
+                        "caesar",
+                        "the weapon shines in the light"
+                    ],
+                    "ballroom": [
+                        "vigenere",
+                        "a circular mark was left behind by the weapon"
+                    ],
+                    "kitchen": [
+                        "caesar",
+                        "the scene of the crime is quite warm"
+                    ]
+                },
+                {
+                    "outcome": [
+                        {
+                            "killer": "scarlett",
+                            "weapon": "candlestick",
+                            "room": "library"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "game": [
+                {
+                    "study": [
+                        "custom",
+                        "the culprit is male",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ｢v ⟄⅃⦝□"
+                    ],
+                    "hall": [
+                        "custom",
+                        "the culprit has no facial hair",
+                        ">⊓□ ⌞<⦝⸅⟔｢> ⊓⅃v ⊡⟃ ⊏⅃⌞｢⅃⦝ ⊓⅃｢⟔"
+                    ],
+                    "lounge": [
+                        "vigenere",
+                        "the weapon is quite heavy"
+                    ],
+                    "library": [
+                        "vigenere",
+                        "residue was left behind by the weapon"
+                    ],
+                    "billiardroom": [
+                        "caesar",
+                        "the crime scene is a communal space"
+                    ],
+                    "diningroom": [
+                        "caesar",
+                        "the crime scene does not have a passage"
+                    ],
+                    "conservatory": [
+                        "vigenere",
+                        "the crime scene is a large room"
+                    ],
+                    "ballroom": [
+                        "vigenere",
+                        "a loud noise was heard at the time of the murder"
+                    ],
+                    "kitchen": [
+                        "caesar",
+                        "many chairs were knocked over at the time of the murder"
+                    ]
+                },
+                {
+                    "outcome": [
+                        {
+                            "killer": "green",
+                            "weapon": "revolver",
+                            "room": "diningroom"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

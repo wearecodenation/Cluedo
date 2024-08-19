@@ -1,0 +1,1233 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;400;700&display=swap');
+
+* {
+    font-family: 'Unbounded', cursive;
+}
+
+#board {
+    background-image: url('../images/board2.png');
+    background-repeat: no-repeat;
+    background-size: 40% 75%;
+    background-position: center;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+}
+
+#boardback {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    display: none;
+}
+
+#charpopup {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    transition: ease-in 5s;
+    display: none;
+}
+
+#charoverlay {
+    position: absolute;
+    top: 13%;
+    left: 28%;
+    width: 42%;
+    height: 77%;
+    background-color: #FF6766;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 25px );
+    -webkit-backdrop-filter: blur( 25px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: rgb(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#backoverlay {
+    position: absolute;
+    top: 13%;
+    left: 28%;
+    width: 42%;
+    height: 77%;
+    background-color: #FF6766;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 25px );
+    -webkit-backdrop-filter: blur( 25px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: rgb(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#backoverlay p {
+    padding: 0 50px 0 50px;
+}
+
+.fade-in {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; 
+    }
+}
+
+#cnlogo {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#parent {
+    /* border: solid 5px black; */
+    height: 100vh;
+    margin: 0 12% 0 12%;
+}
+
+.playerIcon {
+    filter: drop-shadow(8px 0px 0.85rem rgb(0, 0, 0)) hue-rotate(0deg);
+}
+
+#overlay {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: #FF6766;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 25px );
+    -webkit-backdrop-filter: blur( 25px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: rgb(0, 0, 0);
+}
+
+#overlay p {
+    padding: 0px 25px 0px 25px;
+}
+
+#overlay input {
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    padding: 5px 5px 5px 15px;
+}
+
+#overlay button {
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    bottom: 20px;
+}
+
+#charoverlay button {
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    bottom: 20px;
+}
+
+#outcome {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: var(--color-bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);
+    margin-top: 15px;
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+}
+
+#outcome select {
+    width: 75%;
+    margin: 5px 5px 5px 5px;
+    border-radius: 20px;
+    padding: 2px 2px 2px 2px;
+    font-size: small;
+}
+
+#outcome button {
+    width: 50%;
+    padding: 5px 5px 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    cursor: pointer;
+    font-size: small;
+}
+
+#outcome button:hover {
+    transition: ease-in;
+    transition-duration: 0.25s;
+    background: rgb(245, 245, 245);
+    background: rgba(10, 4, 70, 0.244)
+}
+
+#correct {
+    border: 1px solid;
+    border-radius: 20px;
+    margin: 30px 50px;
+    padding: 10px 10px 10px 10px;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    display: none;
+}
+
+#correct p {
+    padding: 10px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+#incorrect {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 15px 15px 15px;
+    color: #8a1010;
+    background-color: #f2bfbf;
+    display: none;
+}
+
+#closebtn {
+    position: absolute;
+    width: 25%;
+    height: 8%;
+    bottom: 10px;
+    cursor: pointer;
+    font-size: small;
+}
+
+#closebtn:hover {
+    transition: ease-in;
+    transition-duration: 0.25s;
+    background: rgb(245, 245, 245);
+}
+
+#charclose {
+    position: absolute;
+    width: 25%;
+    height: 5%;
+    bottom: 10px;
+    cursor: pointer;
+    font-size: small;
+}
+
+#charclose:hover {
+    transition: ease-in;
+    transition-duration: 0.25s;
+    background: rgb(245, 245, 245);
+}
+
+#backclose {
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    font-size: small;
+}
+
+#backclose:hover {
+    transition: ease-in;
+    transition-duration: 0.25s;
+    background: rgb(245, 245, 245);
+}
+
+#ciphertext {
+    font-size: xx-large;
+}
+
+#visitedrooms {
+    display: none;
+    flex-direction: row;
+    background-color: var(--color-bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    /* padding: 10px 10px 10px 10px; */
+}
+
+#roomlist {
+    text-align: left;
+}
+
+#roomlist li {
+    cursor: pointer;
+    background-image: linear-gradient(
+        to right,
+        #ec9624,
+        #ec9624 50%,
+        #000 50%
+      );
+      background-size: 200% 100%;
+      background-position: -100%;
+      padding: 5px 0;
+      position: relative;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.3s ease-in-out;
+      font-size: medium;
+      margin-left: -20px;
+      text-align: left;
+}
+
+#roomlist li::before {
+    content: '';
+    background: #ec9624;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+#roomlist li:hover {
+    background-position: 0;
+}
+
+#roomlist li:hover::before{
+    width: 100%;
+  }
+
+#visitedrooms p {
+    font-weight: 1000;
+    font-size: small;
+}
+
+#controls {
+    position: absolute;
+    width: 11%;
+    left: 6%;
+    top: 17%;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* padding-right: 10px; */
+}
+
+#controlsright {
+    position: absolute;
+    width: 11%;
+    right: 6%;
+    top: 18%;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* padding-right: 10px; */
+}
+
+#optionspanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: var(--color-bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(64, 64, 64, 0.15);
+    margin-top: 15px;
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+}
+
+#optionspanel select {
+    width: 75%;
+    margin: 5px 5px 5px 5px;
+    border-radius: 20px;
+    padding: 2px 2px 2px 2px;
+    font-size: small;
+}
+
+#optionspanel button {
+    /* width: 50%; */
+    padding: 5px 5px 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 1);
+    color: black;
+    cursor: pointer;
+    /* font-size: small; */
+}
+
+#optionspanel button:hover {
+    transition: ease-in;
+    transition-duration: 0.25s;
+    background: rgb(245, 245, 245);
+}
+
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: small;
+  }
+
+  .anim-btn {
+    background-color: #ff9100;
+    border-radius: 10px;
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+    font-size: small;
+  }
+  .anim-btn span {
+    transition: all 0.3s;
+  }
+  .anim-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+  }
+  .anim-btn:hover span {
+    letter-spacing: 2px;
+  }
+  .anim-btn:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+  }
+  .anim-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.1);
+  }
+  .anim-btn:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+  }
+
+#study {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 73%;
+    left: 57%;
+    height: 11%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hall {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 65%;
+    left: 46%;
+    height: 20%;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lounge {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 67%;
+    left: 32%;
+    height: 17%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#library {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 53%;
+    left: 57%;
+    height: 13%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards {
+    /* border: solid 5px green; */
+    position: absolute;
+    top: 42%;
+    left: 47%;
+    height: 20%;
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#diningroom {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 40%;
+    left: 32%;
+    height: 18%;
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#billiardroom {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 37%;
+    left: 58%;
+    height: 13%;
+    width: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#conservatory {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 17%;
+    left: 59%;
+    height: 13%;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ballroom {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 17%;
+    left: 44%;
+    height: 20%;
+    width: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#kitchen {
+    /* border: solid 5px red; */
+    position: absolute;
+    top: 18%;
+    left: 32%;
+    height: 16%;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pigpen-wrapper {
+    display: inline-block;
+    background: white;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dotted {
+    background: black;
+    -webkit-box-shadow: inset 0px 0px 0px 23px rgba(255, 255, 255, 1);
+    -moz-box-shadow: inset 0px 0px 0px 23px rgba(255, 255, 255, 1);
+    box-shadow: inset -2px 0px 0px 23px rgba(255, 255, 255, 1);
+}
+
+#charimg {
+    position: relative;
+    width: 80%;
+}
+
+.pigpen {
+    display: inline-block;
+    background: transparent;
+    width: 10px;
+    height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 4px solid white;
+}
+
+.a,
+.j {
+    border-color: white black black white;
+}
+
+.b,
+.k {
+    border-color: white black black black;
+}
+
+.c,
+.l {
+    border-color: white white black black;
+}
+
+.d,
+.m {
+    border-color: black black black white;
+}
+
+.e,
+.n {
+    border-color: black black black black;
+}
+
+.f,
+.o {
+    border-color: black white black black;
+}
+
+.g,
+.p {
+    border-color: black black white white;
+}
+
+.h,
+.q {
+    border-color: black black white black;
+}
+
+.i,
+.r {
+    border-color: black white white black;
+}
+
+.s {
+    border-color: white black black white;
+    transform: translate(0px, -6px) rotate(45deg);
+}
+
+.u {
+    border-color: white white black black;
+    transform: translate(6px, 0px) rotate(45deg);
+}
+
+.t {
+    border-color: black black white white;
+    transform: translate(-6px, 0px) rotate(45deg);
+}
+
+.v {
+    border-color: black white white black;
+    transform: translate(0px, 6px) rotate(45deg);
+}
+
+
+.w {
+    border-color: white black black white;
+    transform: translate(0px, -6px) rotate(45deg);
+}
+
+.y {
+    border-color: white white black black;
+    transform: translate(6px, 0px) rotate(45deg);
+}
+
+.x {
+    border-color: black black white white;
+    transform: translate(-6px, 0px) rotate(45deg);
+}
+
+.z {
+    border-color: black white white black;
+    transform: translate(0px, 6px) rotate(45deg);
+}
+
+.blur {
+    backdrop-filter: blur( 50px );
+    -webkit-backdrop-filter: blur( 50px );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+@media (max-width: 576px) {
+    #optionsh1 {
+        font-size: 8px;
+    }
+
+    #pctag {
+        font-size: 6px;
+    }
+
+    #visitedrooms p {
+        font-size: 8px;
+    }
+
+    #roomlist li {
+        font-size: 8px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 8px;
+    }
+
+    #optionspanel select {
+        font-size: 6px;
+    }
+
+    #optionssubmit {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #showchars {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #outcome select {
+        font-size: 6px;
+    }
+
+    #outcome button {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 14px;
+    }
+
+    #correct p {
+        font-size: 8px;
+    }
+
+    #overlay button {
+        font-size: 8px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #charoverlay button {
+        font-size: 8px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 8px;
+    }
+
+    #incorrect, #correct {
+        font-size: 6px;
+    }
+
+    #cnlogo {
+        width: 100%;
+    }
+
+    .bop {
+        font-size: 6px;
+        overflow: hidden;
+    }
+
+    #backheading {
+        font-size: 12px;
+        font-weight: 1000;
+    }
+}
+
+@media (min-width: 576px) {
+    #optionsh1 {
+        font-size: 10px;
+    }
+
+    #pctag {
+        font-size: 8px;
+    }
+
+    #visitedrooms p {
+        font-size: 10px;
+    }
+
+    #roomlist li {
+        font-size: 8px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 10px;
+    }
+
+    #optionspanel select {
+        font-size: 6px;
+    }
+
+    #optionssubmit {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #showchars {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #outcome select {
+        font-size: 6px;
+    }
+
+    #outcome button {
+        font-size: 8px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 16px;
+    }
+
+    #correct p {
+        font-size: 10px;
+    }
+
+    #overlay button {
+        font-size: 8px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #charoverlay button {
+        font-size: 8px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 8px;
+    }
+
+    #incorrect, #correct {
+        font-size: 8px;
+    }
+
+    .bop {
+        font-size: 6px;
+        overflow: hidden;
+    }
+
+    #backheading {
+        font-size: 14px;
+        font-weight: 1000;
+    }
+}
+
+@media (min-width: 768px) { 
+    #optionsh1 {
+        font-size: 10px;
+    }
+
+    #pctag {
+        font-size: 8px;
+    }
+
+    #visitedrooms p {
+        font-size: 10px;
+    }
+
+    #roomlist li {
+        font-size: 8px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 10px;
+    }
+
+    #optionspanel select {
+        font-size: 8px;
+    }
+
+    #optionssubmit {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #showchars {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #outcome select {
+        font-size: 8px;
+    }
+
+    #outcome button {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 18px;
+    }
+
+    #correct p {
+        font-size: 10px;
+    }
+
+    #overlay button {
+        font-size: 10px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #charoverlay button {
+        font-size: 10px;
+        padding: 0px 0px 0px 0px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 8px;
+    }
+
+    #incorrect, #correct {
+        font-size: 8px;
+    }
+
+    .bop {
+        font-size: 10px;
+        overflow: hidden;
+    }
+
+    #backheading {
+        font-size: 16px;
+        font-weight: 1000;
+    }
+}
+
+@media (min-width: 992px) {
+    #optionsh1 {
+        font-size: 12px;
+    }
+
+    #pctag {
+        font-size: 8px;
+    }
+
+    #visitedrooms p {
+        font-size: 12px;
+    }
+
+    #roomlist li {
+        font-size: 10px;
+        margin-left: -40px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 12px;
+    }
+
+    #optionspanel select {
+        font-size: 8px;
+    }
+
+    #optionssubmit {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #showchars {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #outcome select {
+        font-size: 8px;
+    }
+
+    #outcome button {
+        font-size: 10px;
+        width: 85%;
+    }
+
+    #overlay p {
+        font-size: 20px;
+    }
+
+    #correct p {
+        font-size: 12px;
+    }
+
+    #overlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #charoverlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 10px;
+    }
+
+    #incorrect, #correct {
+        font-size: 10px;
+    }
+
+    .bop {
+        font-size: 10px;
+    }
+
+    #backheading {
+        font-size: 18px;
+        font-weight: 1000;
+    }
+}
+
+@media (min-width: 1200px) {
+    #optionsh1 {
+        font-size: 12px;
+    }
+
+    #pctag {
+        font-size: 8px;
+    }
+
+    #visitedrooms p {
+        font-size: 12px;
+    }
+
+    #roomlist li {
+        font-size: 10px;
+        margin-left: -20px;
+        text-align: left;
+    }
+    .anim-btn {
+        font-size: 14px;
+    }
+
+    #optionspanel select {
+        font-size: 8px;
+    }
+
+    #optionssubmit {
+        font-size: 10px;
+        width: 70%;
+    }
+
+    #showchars {
+        font-size: 10px;
+        width: 70%;
+    }
+
+    #outcome select {
+        font-size: 8px;
+    }
+
+    #outcome button {
+        font-size: 10px;
+        width: 70%;
+    }
+
+    #overlay p {
+        font-size: 22px;
+    }
+
+    #correct p {
+        font-size: 14px;
+    }
+
+    #overlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #charoverlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 10px;
+    }
+
+    #incorrect, #correct {
+        font-size: 10px;
+    }
+
+    .bop {
+        font-size: 12px;
+    }
+
+    #backheading {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #optionsh1 {
+        font-size: 14px;
+    }
+
+    #pctag {
+        font-size: 10px;
+    }
+
+    #visitedrooms p {
+        font-size: 14px;
+    }
+
+    #roomlist li {
+        font-size: 12px;
+        margin-left: -20px;
+        text-align: left;
+    }
+
+    .anim-btn {
+        font-size: 16px;
+    }
+
+    #optionspanel select {
+        font-size: 10px;
+    }
+
+    #optionssubmit {
+        font-size: 12px;
+        width: 60%;
+    }
+
+    #showchars {
+        font-size: 12px;
+        width: 60%;
+    }
+
+    #outcome select {
+        font-size: 10px;
+    }
+
+    #outcome button {
+        font-size: 12px;
+        width: 60%;
+    }
+
+    #overlay p {
+        font-size: 24px;
+    }
+
+    #correct p {
+        font-size: 14px;
+    }
+
+    #overlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #charoverlay button {
+        font-size:12px;
+        width: 20%;
+    }
+
+    #overlay input {
+        font-size: 12px;
+    }
+
+    #incorrect, #correct {
+        font-size: 10px;
+    }
+
+    .bop {
+        font-size: 14px;
+    }
+
+    #backheading {
+        font-size: 20px;
+        font-weight: 1000;
+    }
+}

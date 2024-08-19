@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Cluedo</title>
+</head>
+<body>
+    <div id="board">
+        <div id="controls">
+            <img id="cnlogo" src="./images/cnlogo.png">
+            <div class="btn anim-btn">
+                <span>NEXT MOVE</span>
+            </div>
+            <div id="visitedrooms">
+                <p>Visited rooms:</p>
+                <ol id="roomlist">
+                </ol>
+                <p>Click to revisit a clue</p>
+            </div>
+            <div id="outcome">
+                <select name="whodoneit" id="whodoneit">
+                        <option value="mustard">Colonel Mustard</option>
+                        <option value="white">Mrs. White</option>
+                        <option value="green">Reverend Green</option>
+                        <option value="plum">Professor Plum</option>
+                        <option value="peacock">Mrs. Peacock</option>
+                        <option value="scarlett">Miss Scarlett</option>
+                </select>
+                <select name="withwhat" id="withwhat">
+                    <option value="candlestick">Candlestick</option>
+                    <option value="dagger">Dagger</option>
+                    <option value="leadpipe">Lead Pipe</option>
+                    <option value="revolver">Revolver</option>
+                    <option value="rope">Rope</option>
+                    <option value="wrench">Wrench</option>
+                </select>
+                <select name="wherewasit" id="wherewasit">
+                    <option value="study">Study</option>
+                    <option value="hall">Hall</option>
+                    <option value="Lounge">Lounge</option>
+                    <option value="library">Library</option>
+                    <option value="diningroom">Dining Room</option>
+                    <option value="billiardroom">Billiard Room</option>
+                    <option value="conservatory">Conservatory</option>
+                    <option value="ballroom">Ballroom</option>
+                    <option value="kitchen">Kitchen</option>
+                </select>
+                <button id="outcomesubmit">Am I right?</button>
+            </div>
+        </div>
+
+        <div id="overlay">
+            <p id="ciphertext"></p>
+            <input id="ciphersolution" type="text" placeholder="Enter solution">
+            <div id="correct">Well done, solution found!<p id="freeform"></p></div>
+            <div id="incorrect">Not quite, try again!</div>
+            <button id="closebtn">Close clue</button>
+        </div>
+        <div id="parent">
+            <div id="study" class="child"></div>
+            <div id="hall" class="child"></div>
+            <div id="lounge" class="child"></div>
+            <div id="library" class="child"></div>
+            <div id="cards" class="child"></div>
+            <div id="diningroom" class="child"></div>
+            <div id="billiardroom" class="child"></div>
+            <div id="conservatory" class="child"></div>
+            <div id="ballroom" class="child"></div>
+            <div id="kitchen" class="child"></div>
+        </div>
+
+        <div id="controlsright">
+            <div id="optionspanel">
+                <p id="optionsh1">Options:</p>
+                <p id="pctag">Player colour:</p>
+                <select name="colouroptions" id="colouroptions">
+                    <option value="orange">Orange</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="pink">Pink</option>
+                    <option value="purple">Purple</option>
+                </select>
+                <button id="optionssubmit">Save</button>
+                <button id="showchars">Suspects</button>
+                <!-- <button id="resizebtn">Resize</button> -->
+            </div>
+        </div>
+    </div>
+    <div id="boardback">
+        <div id="backoverlay">
+            <p id="backheading">How to play</p>
+            <p class="bop">Welcome to Code Nation Cluedo!</p>
+            <p class="bop">First start by clicking "Next Move", your game piece will move to a room and reveal a new clue. These clues are sometimes encrypted, othertimes not - once you have an answer or solution enter it into the box and hit enter, if you're correct you'll be told, otherwise try again!</p>
+            <p class="bop">You can save clues for later by closing the clue, to revisit a saved clue simply click on the room from the "Visited Rooms" list.</p>
+            <p class="bop">Once you've received all of the available clues you'll be given three options, and from there you just have to crack the code and solve the mystery!</p>
+            <p class="bop">Happy hunting, detective.</p>
+            <button id="backclose">Close</button>
+        </div>
+    </div>
+    <div id="charpopup">
+        <div id="charoverlay">
+            <img id="charimg" src="./images/Classic.webp">
+            <button id="charclose">Close</button>
+        </div>
+    </div>
+    <script src="./scripts/script.js" type="module"></script>
+</body>
+
+</html>
